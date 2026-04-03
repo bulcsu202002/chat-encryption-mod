@@ -38,6 +38,3 @@ If you want to go back to normal, unencrypted chat:
 
 ## 🔒 Security Note
 This mod uses **SHA-256** to derive a 128-bit key from your password and **AES/ECB/PKCS5Padding** for message encryption. Never use your real-life sensitive passwords (bank, email, etc.) as an encryption key.
-
-## 📜 Credits
-Created with **MCreator** and **Fabric API**.
