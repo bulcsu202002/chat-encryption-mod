@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "chatencryption",
+  "version": "1.0.0",
+  "name": "chatencryption",
+  "authors": [
+    "MCreator"
+  ],
+  "contact": {
+    "homepage": "https://mcreator.net",
+    "sources": ""
+  },
+  "license": "Not specified",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.mcreator.chatencryption.ChatencryptionMod"
+    ],
+    "client": [
+      "net.mcreator.chatencryption.ChatencryptionModClient"
+    ]
+  },
+  "accessWidener": "META-INF/chatencryption.classtweaker",
+  "mixins": [
+    "chatencryption.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.18.4",
+    "minecraft": "~1.21.8",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}

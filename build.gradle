@@ -1,0 +1,39 @@
+plugins {
+    id 'fabric-loom' version '1.15-SNAPSHOT'
+}
+
+version = '1.0'
+group = 'com.yourname'
+base.archivesName = 'modid'
+actualmodid = 'chatencryption'
+
+loom {
+    mixin {
+        useLegacyMixinAp = true
+        defaultRefmapName = actualmodid + ".refmap.json"
+    }
+
+    if (file("src/main/resources/META-INF/chatencryption.classtweaker").exists())
+        accessWidenerPath = file("src/main/resources/META-INF/chatencryption.classtweaker")
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:1.21.8"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:0.18.4"
+
+    //Fabric api
+    modImplementation "net.fabricmc.fabric-api:fabric-api:0.136.1+1.21.8"
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+}
+
+java {
+    withSourcesJar()
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+apply from: 'mcreator.gradle'
